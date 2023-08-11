@@ -124,6 +124,17 @@ const ControlPanel = ({ selectedQuestion, updateQuestion, createQuestion, delete
   document.body.removeChild(a);
   };
 
+
+  // TODO: Refactor so the %%HTML magic is removed from first line on preview
+  const previewApp = () => {
+    const dataStr = JSON.stringify(questions);
+    const embeddedAppHTML = embedJsonInTextFile(dataStr);
+
+    const newTab = window.open('', '_blank');
+    newTab.document.write(embeddedAppHTML);
+    newTab.document.close();   
+  };
+
   return (
     <div className="control-panel-container">
     {/* <div> */}
@@ -170,6 +181,8 @@ const ControlPanel = ({ selectedQuestion, updateQuestion, createQuestion, delete
       <button onClick={handleDelete}>Delete Question</button>
       <button onClick={exportToJson}>Export to JSON</button>
       <button onClick={exportApp}>Embed within Python Notebook</button>
+      <button onClick={previewApp}>Preview Quiz</button>
+      <button onClick={console.log()}>Export to QuizDown Markup </button>
     {/* </div> */}
     </div>
   );
