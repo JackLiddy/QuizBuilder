@@ -164,7 +164,7 @@ const QuestionsGrid = () => {
   return (
     // <div style={{ display: 'flex', width: '100%' }}>
     <div className="app-container">
-      <div className="ag-theme-alpine" style={{height: '400px', width: '80%'}}>
+      <div className="ag-theme-alpine" style={{height: '80%', width: '70%'}}>
         <AgGridReact
           columnDefs={columns}
           rowData={questions}
