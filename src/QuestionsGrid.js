@@ -162,28 +162,30 @@ const QuestionsGrid = () => {
   let gridApi
 
   return (
-    // <div style={{ display: 'flex', width: '100%' }}>
-    <div className="app-container">
-      <div className="ag-theme-alpine" style={{height: '80%', width: '70%'}}>
-        <AgGridReact
-          columnDefs={columns}
-          rowData={questions}
-          onGridReady={params => {
-            gridApi = params.api
-            onGridReady(params)
-          }}
-          rowSelection="single"
-          onSelectionChanged={onSelectionChanged}
-          gridOptions={gridOptions}
+    <div className='page-container'>
+      <h1> App Builder Prototype</h1>
+      <div className="app-container">
+        <div className="ag-theme-alpine" style={{height: '80%', width: '70%'}}>
+          <AgGridReact
+            columnDefs={columns}
+            rowData={questions}
+            onGridReady={params => {
+              gridApi = params.api
+              onGridReady(params)
+            }}
+            rowSelection="single"
+            onSelectionChanged={onSelectionChanged}
+            gridOptions={gridOptions}
+          />
+        </div>
+        <ControlPanel
+          selectedQuestion={selectedQuestion}
+          createQuestion={createQuestion}
+          updateQuestion={updateQuestion}
+          deleteQuestion={deleteQuestion}
+          questions={questions}
         />
       </div>
-      <ControlPanel
-        selectedQuestion={selectedQuestion}
-        createQuestion={createQuestion}
-        updateQuestion={updateQuestion}
-        deleteQuestion={deleteQuestion}
-        questions={questions}
-      />
     </div>
   )
 }
