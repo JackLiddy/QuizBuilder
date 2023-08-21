@@ -1,3 +1,10 @@
+
+.App {
+  /* background-color: rgb(233, 233, 233) */
+
+}
+
+
 .app-container {
     /* position: relative; */
     display: flex;
@@ -23,6 +30,60 @@
     /* justify-content: space-around; */
     transition: all 0.3s ease;
   }
+
+  button { 
+    /* color:#050;  */
+    /* font: old 84% 'trebuchet ms',helvetica,sans-serif;  */
+    /* background-color:#fed;  */
+    /* border:1px solid;  */
+    /* border-color: #696 #363 #363 #696;  */
+
+    padding: 20px;
+    font-size: 16px;
+    /* border: none; */
+    border: 1px solid;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10vw; */
+
+    margin-top: auto;
+    margin-bottom: 1vh;
+    margin-right: 3vw;
+    margin-left: 3vw;;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: grid;
+  margin: 10px;
+}
+input {
+  margin-left: 10px;
+}
+
+.input-container {
+
+}
+
+/* textarea {
+  margin: auto;
+} */
+/* label {
+
+} */
+
+/* input {
+
+}  */
+
 
   /* .questions-grid {
     height: 500px;
