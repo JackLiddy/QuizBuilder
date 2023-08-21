@@ -163,7 +163,7 @@ const QuestionsGrid = () => {
 
   return (
     <div className='page-container'>
-      <h1> App Builder Prototype</h1>
+      <h1> App Builder Proof of Concept</h1>
       <div className="app-container">
         <div className="ag-theme-alpine" style={{height: '80%', width: '70%'}}>
           <AgGridReact

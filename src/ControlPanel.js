@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 
-import { embedJsonInTextFile } from "./utils.js";
+import { embedJsonInHTML } from "./utils.js";
 
 const ControlPanel = ({
     selectedQuestion,
@@ -109,7 +109,7 @@ const ControlPanel = ({
 
     const exportApp = () => {
         const dataStr = JSON.stringify(questions);
-        const embeddedAppText = embedJsonInTextFile(dataStr);
+        const embeddedAppText = embedJsonInHTML(dataStr, true);
         const filename = "notebookEmbed.txt";
 
         var blob = new Blob([embeddedAppText], {
@@ -132,7 +132,7 @@ const ControlPanel = ({
     // TODO: Refactor so the %%HTML magic is removed from first line on preview
     const previewApp = () => {
         const dataStr = JSON.stringify(questions);
-        const embeddedAppHTML = embedJsonInTextFile(dataStr);
+        const embeddedAppHTML = embedJsonInHTML(dataStr, false);
 
         const newTab = window.open("", "_blank");
         newTab.document.write(embeddedAppHTML);
@@ -145,21 +145,21 @@ const ControlPanel = ({
             <h2>Control Panel</h2>
             <p>Click on a question to edit it.</p>
             <div className="input-container">
-              <label>Question:</label>
-              <input
-                  type="text"
-                  value={questionText}
-                  onChange={(e) => setQuestionText(e.target.value)}
-              />
+              <label>Question:
+                <textarea
+                    value={questionText}
+                    onChange={(e) => setQuestionText(e.target.value)}
+                />
+              </label>
 
               <hr></hr>
 
-              <label>Answer 1:</label>
-              <input
-                  type="text"
-                  value={answer1}
-                  onChange={(e) => setAnswer1(e.target.value)}
-              />
+              <label>Answer 1:
+                <textarea
+                    value={answer1}
+                    onChange={(e) => setAnswer1(e.target.value)}
+                />
+              </label>
               <div>
                   <label>Correct:</label>
                   <input
@@ -167,15 +167,16 @@ const ControlPanel = ({
                       checked={correct1}
                       onChange={(e) => setCorrect1(e.target.checked)}
                   />
+                  
                   <hr></hr>
               </div>
 
-              <label>Answer 2:</label>
-              <input
-                  type="text"
-                  value={answer2}
-                  onChange={(e) => setAnswer2(e.target.value)}
-              />
+              <label>Answer 2:
+                <textarea
+                    value={answer2}
+                    onChange={(e) => setAnswer2(e.target.value)}
+                />
+              </label>
               <div>
                   <label>Correct:</label>
                   <input
@@ -185,12 +186,12 @@ const ControlPanel = ({
                   />
                   <hr></hr>
               </div>
-              <label>Answer 3:</label>
-              <input
-                  type="text"
-                  value={answer3}
-                  onChange={(e) => setAnswer3(e.target.value)}
-              />
+              <label>Answer 3:
+                <textarea
+                    value={answer3}
+                    onChange={(e) => setAnswer3(e.target.value)}
+                />
+              </label>
               <div>
                   <label>Correct:</label>
                   <input
@@ -201,12 +202,12 @@ const ControlPanel = ({
                   <hr></hr>
               </div>
 
-              <label>Answer 4:</label>
-              <input
-                  type="text"
-                  value={answer4}
-                  onChange={(e) => setAnswer4(e.target.value)}
-              />
+              <label>Answer 4:
+                <textarea
+                    value={answer4}
+                    onChange={(e) => setAnswer4(e.target.value)}
+                />
+              </label>
               <div>
                   <label>Correct:</label>
                   <input

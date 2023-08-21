@@ -61,12 +61,28 @@
   flex-direction: column;
 }
 
-/* .input-container {
-
+label {
+  display: grid;
+  margin: 10px;
 }
 input {
+  margin-left: 10px;
+}
+
+.input-container {
+
+}
+
+/* textarea {
+  margin: auto;
+} */
+/* label {
 
 } */
+
+/* input {
+
+}  */
 
 
   /* .questions-grid {

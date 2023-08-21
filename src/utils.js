@@ -1,8 +1,13 @@
-export function embedJsonInTextFile(json) {
+export function embedJsonInHTML(json, withMagic) {
     // const json = JSON.stringify(data);
 
+    let magic = '';
+    if (withMagic) {
+      magic = '%%HTML';
+    }
+
     const textContent = `
-    %%HTML
+    ${magic}
     <!DOCTYPE html>
     <html lang="en">
       <head>
